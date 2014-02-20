@@ -114,7 +114,7 @@ begin
           repo_number += 1
           puts "cloning %s (%d/%d)" % [repo["full_name"], repo_number, repos.length]
           puts repo["description"]
-          git_command = %Q(git clone #{repo["ssh_url"]} #{repo["full_name"]})
+          git_command = %Q(git clone --mirror #{repo["ssh_url"]} #{repo["full_name"]})
           puts
           puts "running %s" % git_command
           Dir.chdir(options[:target_dir]) {
